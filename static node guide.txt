@@ -1,0 +1,47 @@
+Node JS(pure Node Questions)->
+
+a)first make a data.json with this structure->
+{
+
+"employees":[
+{"":"","":""},{},{}
+
+]
+
+}
+
+b)Then make a index.html with just one thing that is important->result div->
+<div id="result></div>
+c)then create a server.js file which will behave as a NodeJS server->
+import http and fs in that and then http.crete server and server.listen port
+d) in http.createServer ->req ,res will be there as a parmetre and res.setHeader->Access-control-allow-origin ,* krdo ->then if req.url === employess then fs.readFile honga data.json jisme do parametre aek err anda aek data->res.witeHead krdo 200 nd content type jo read kiya
+
+if json then application/json ,if html  then text/html and if js then application./javascript
+and res.end data krdo sabmai
+
+3 cheezo ke liye krna h ye req.url ->script html and aek data.json wala radom name
+
+e) then server bngya ab script js banani pdengi->
+in scriptjs aek fucntion honga loademployees-> jisme ab xhr import krenge and xhr ko open krek localhost3000 employees wala api pe hit krvadenge
+
+then xhr ke onload honepe ->response text ko parse kreke data mail dalenge and 
+data.employees.forEach(emp=>{emp.salary}) krke output m dalenge fir ouput ko result m dalkexhr ko send krvadenge and then done
+
+
+
+Purely Static Website->
+iske server m 3 imports lagenege aek http,aek fs and aek path(path need for extracting extensions like .html)
+
+then same http.create server and ab 2-3  faltu cheeze like if let filepath="."+req.url and if file path=>./ then filepath=./index.html ->
+then path.extname se extension nikalenge filepath ka and if extname js h tou content type application/javascrpt ,css h tou text/css ,image h tou image/jpeg and png h tou paplcaton./png(4 ke liye krna h->js css png jpeg)
+
+then fs.readFile krenge filepath pe with write head 200 and content type as content type and res.end data krenge ;
+if err then res.writeHead(404) and res.end FIle not found
+
+Same as above just isme content-type pe bahut jyada focus h
+
+
+
+
+
+
